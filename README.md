@@ -1,12 +1,12 @@
 # 🎫 Support Ticket Management System
 
-A full-stack **Mini Helpdesk System** built with **Node.js**, **Express**, **MongoDB**, and **React + Tailwind CSS**. Users can raise support tickets; admins can manage, filter, and resolve them — all with a polished, professional interface.
+A full-stack **Mini Helpdesk System** built with **Node.js**, **Express**, **MongoDB**, and **React + Tailwind CSS**. Users can raise support tickets; admins can manage, filter, and resolve them  all with a polished, professional interface.
 
 ---
 
 ## 🚀 Live Demo
 
-> Deploy to Render / Railway / Vercel and add your link here.
+> https://support-ticket-management-system-phi.vercel.app/
 
 ---
 
@@ -15,7 +15,7 @@ A full-stack **Mini Helpdesk System** built with **Node.js**, **Express**, **Mon
 | Role  | Capabilities |
 |-------|-------------|
 | **User** | Register · Login · Create Tickets · Track Status · Edit/Delete Own Tickets · Add Comments |
-| **Admin** | View All Tickets · Search & Filter · Sort & Paginate · Update Status/Priority · View Activity Log · Dashboard Stats |
+| **Admin** | View All Tickets · Search & Filter · Sort & Paginate · Update Status,Priority · View Activity Log · Dashboard Stats |
 
 ---
 
@@ -117,8 +117,8 @@ Edit `backend/.env`:
 
 ```env
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_very_secure_secret_key_here
+MONGO_URI=""
+JWT_SECRET=secret_key
 JWT_EXPIRES_IN=1d
 CLIENT_URL=http://localhost:5173
 ```
@@ -299,3 +299,7 @@ Each event is captured by the `ticketEvents` listener and persisted to the `Acti
 ## 📄 License
 
 MIT © 2026
+
+## Author
+Ayush Raj
+
