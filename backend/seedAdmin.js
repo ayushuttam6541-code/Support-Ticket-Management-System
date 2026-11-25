@@ -1,4 +1,3 @@
-
 require("dotenv").config();
 
 const mongoose = require("mongoose");
@@ -6,8 +5,8 @@ const bcrypt = require("bcryptjs");
 const User = require("./models/User");
 
 const createAdmin = async () => {
-  const ADMIN_EMAIL = "kamalayush65@gmail.com";
-  const ADMIN_PASSWORD = "Ayush@1234";
+  const ADMIN_EMAIL = "admin@helpdesk.com";
+  const ADMIN_PASSWORD = "admin1234";
   const ADMIN_NAME = "System Admin";
 
   console.log("Connecting to MongoDB...");
@@ -51,4 +50,3 @@ createAdmin().catch((err) => {
   console.error("Check your MONGO_URI in .env and ensure network access to MongoDB Atlas.");
   process.exit(1);
 });
-
