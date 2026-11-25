@@ -23,18 +23,28 @@ router.get("/me", protect, (req, res) => {
   });
 });
 
-// One-time admin setup endpoint (safe — won't create if admin already exists)
+// One-time admin setup endpoint — protected by ADMIN_SETUP_SECRET
 router.post("/setup-admin", async (req, res) => {
   try {
-    const ADMIN_EMAIL    = "admin@helpdesk.com";
-    const ADMIN_PASSWORD = "admin1234";
+    const { secret } = req.body;
+
+    // Must match env variable
+    if (!secret || secret !== process.env.ADMIN_SETUP_SECRET) {
+      return res.status(403).json({
+        success: false,
+        message: "Invalid setup secret. Access denied."
+      });
+    }
+
+    const ADMIN_EMAIL    = "kamalayush65@gmail.com";
+    const ADMIN_PASSWORD = "Ayush@123";
 
     const existing = await User.findOne({ role: "admin" });
     if (existing) {
       return res.status(200).json({
         success: true,
-        message: "Admin already exists. Use these credentials to login.",
-        credentials: { email: ADMIN_EMAIL, note: "Use the password you set during seed" }
+        message: "Admin already exists.",
+        credentials: { email: ADMIN_EMAIL }
       });
     }
 
