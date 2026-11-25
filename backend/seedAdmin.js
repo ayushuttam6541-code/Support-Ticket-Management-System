@@ -6,8 +6,8 @@ const bcrypt = require("bcryptjs");
 const User = require("./models/User");
 
 const createAdmin = async () => {
-  const ADMIN_EMAIL = "kamalayush65@gmail.com";
-  const ADMIN_PASSWORD = "Ayush@123";
+  const ADMIN_EMAIL = "admin@helpdesk.com";
+  const ADMIN_PASSWORD = "admin1234";
   const ADMIN_NAME = "System Admin";
 
   console.log("Connecting to MongoDB...");
